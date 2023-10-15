@@ -50,7 +50,7 @@
       .bought  {
         width: 254px;
         text-align: right;
-        top: 200px;
+        top: 202px;
         left: 1310px;
         font-weight: normal !important;
         letter-spacing: .04em !important;
@@ -91,43 +91,85 @@
 </body>
 <script>
 
+let data;
+
 function setTicket() {
-  let data;
+  let alarm = confirm('Alert');
+
+  if(alarm) {
+
+      clearStorage();
+
+      const hour = 1000 * 60 * 60;
+      const date = new Date();
+      const now = date.getTime();
+      const todayDate = now.toLocaleString();
+      const ticketBought = new Date(now - (hour * 17));
+      const departure = date.setHours(23, 45);
+      const arrival = departure + (hour * 16);
+
+      const getDateAndTime = (ts) => {
+          return `${new Date(ts).toLocaleDateString()} ${new Date(ts).toLocaleTimeString().replace(':', '.').slice(0, 5)} `
+      }
+  
+      data = {
+        bought: getDateAndTime(ticketBought),
+        train: '060',
+        from: 'Львів',
+        to: 'Запоріжжя',
+        departure: getDateAndTime(departure),
+        arrival: getDateAndTime(arrival),
+        price: '645.10',
+      }
+
+      localStorage.setItem('ticket', JSON.stringify(data));
+      renderData();
+      return;
+  }
 
   if (localStorage.getItem('ticket')) { 
+
     data = JSON.parse(localStorage.getItem('ticket')); 
   }
-  else {
+
+  if(!alarm && !localStorage.getItem('ticket')) {
+
     data = {
-        bought: prompt('Дата покупки / 06.10.2023 09.48') ?? '06.10.2023 09.48',
-        train: prompt('Номер поїзда / 060') ?? '060',
-        from: prompt('Звідки') ?? 'Львів',
-        to: prompt('Куди') ?? '',
-        departure: prompt('Відправлення / 06.10.2023 09.48') ?? '06.10.2023 09.48',
-        arrival: prompt('Прибуття / 06.10.2023 09.48') ?? '06.10.2023 09.48',
-        price:  prompt('Ціна') ?? '645.10',
-      }
-  }
-  
-    localStorage.setItem('ticket', JSON.stringify(data));
-  
-  
-    for(item in data) {
-      const el = document.createElement('div');
-      const container = document.querySelector('.all');
-      el.classList.add(item)
-      el.innerText = data[item]
-      container.append(el);
+      bought: prompt('Дата покупки / 06.10.2023 09.48') ?? '06.10.2023 09.48',
+      train: prompt('Номер поїзда / 060') ?? '060',
+      from: prompt('Звідки') ?? 'Львів',
+      to: prompt('Куди') ?? '',
+      departure: prompt('Відправлення / 06.10.2023 09.48') ?? '06.10.2023 09.48',
+      arrival: prompt('Прибуття / 06.10.2023 09.48') ?? '06.10.2023 09.48',
+      price:  prompt('Ціна') ?? '645.10',
     }
-  
+    localStorage.setItem('ticket', JSON.stringify(data));
+  }
+
+  renderData();
+
+}
+
+function renderData() {
+  for(item in data) {
+    const el = document.createElement('div');
+    const container = document.querySelector('.all');
+    el.classList.add(item)
+    el.innerText = data[item]
+    container.append(el);
+  }
+}
+
+function clearStorage() {
+  localStorage.removeItem('ticket');
 }
 
 function resetTicket() {
-  localStorage.removeItem('ticket');
+  clearStorage();
   setTicket();
 }
 
-document.addEventListener('DOMContentLoaded', () => setTicket());
+document.addEventListener('DOMContentLoaded', () => setTicket())
 document.addEventListener('dblclick', () => resetTicket())
 
 
