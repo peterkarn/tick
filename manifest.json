@@ -8,8 +8,8 @@
       "sizes": "512x512"
     }
   ],
-  "id": "/",
-  "start_url": "/",
+  "id": "/tick",
+  "start_url": "/tick",
   "background_color": "#3367D6",
   "display": "standalone",
   "scope": "/",
