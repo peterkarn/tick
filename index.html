@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=img, initial-scale=1.0">
     <title>Document</title>
+    <link rel="manifest" href="./manifest.json">
     <style>
       body {
         position: relative;
@@ -184,5 +185,16 @@ document.addEventListener('dblclick', () => resetTicket())
 //  console.log(new Date(e.target.value))
 //});
 
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(function(registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch(function(error) {
+        console.error('Service Worker registration failed:', error);
+      });
+  }
 </script>
 </html>
