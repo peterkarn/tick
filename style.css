@@ -70,6 +70,7 @@ body {
   left: 492px;
   text-transform: uppercase;
   min-width: 300px;
+  font-size: 25px !important;
 }
 
 .to {
@@ -77,6 +78,7 @@ body {
   left: 492px;
   text-transform: uppercase;
   min-width: 300px;
+  font-size: 25px !important;
 }
 
 input {
