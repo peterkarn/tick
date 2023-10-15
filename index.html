@@ -114,7 +114,7 @@ function setTicket() {
       const arrival = departure + (hour * 17.1);
 
       const getDateAndTime = (ts) => {
-          return `${new Date(ts).toLocaleDateString().replace('/', '.')} ${new Date(ts).toLocaleTimeString().replace(':', '.').slice(0, 5)} `
+          return `${new Date(ts).toLocaleDateString().replaceAll('/', '.')} ${new Date(ts).toLocaleTimeString().replaceAll(':', '.').slice(0, 5)} `
       }
   
       data = {
