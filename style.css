@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'VeranaSans';
+  src: 
+    url('./VeranaSans-Bold.woff') format('woff');
+}
+
+body {
+  position: relative;
+  font-family: VeranaSans, sans-serif;
+  width: fit-content;
+}
+
+.all {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.all > div {
+  position: absolute;
+  background: white;
+  filter: blur(0.5px);
+  font-size: 24px;
+  font-weight: bold;
+  background: white;
+  letter-spacing: 0.03em;
+}
+
+
+.price  {
+  top: 460px;
+  left: 185px;
+  width: 106px;
+}
+
+.train  {
+  top: 247px;
+  left: 1331px;
+  font-size: 24.2px !important;
+  width: 55px;
+  text-align: right;
+}
+
+.bought  {
+  width: 254px;
+  text-align: right;
+  top: 205px;
+  left: 1310px;
+}
+
+.arrival {
+  min-width: 300px;
+  top: 416px;
+  left: 493px;
+}
+
+.departure {
+  min-width: 300px;
+  top: 374px;
+  left: 493px;
+}
+
+.from {
+  top: 287px;
+  left: 492px;
+  text-transform: uppercase;
+  min-width: 300px;
+}
+
+.to {
+  top: 330px;
+  left: 492px;
+  text-transform: uppercase;
+  min-width: 300px;
+}
+
+input {
+  position: relative;
+}
