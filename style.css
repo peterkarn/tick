@@ -28,6 +28,14 @@ body {
   letter-spacing: 0.03em;
 }
 
+.passenger {
+  top: 244px;
+  left: 493px;
+  text-transform: uppercase;
+  font-size: 26px;
+  width: 572px;
+}
+
 
 .price  {
   top: 458px;

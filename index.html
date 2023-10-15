@@ -59,6 +59,7 @@ function setTicket() {
   if(!alarm && !localStorage.getItem('ticket')) {
 
     data = {
+      passenger: prompt('Пасажир') ?? 'Карнаух Петро',
       bought: prompt('Дата купівлі / 06.10.2023 09.48') ?? '06.10.2023 09.48',
       train: prompt('Номер поїзда / 060') ?? '060',
       from: prompt('Звідки') ?? 'Львів',
