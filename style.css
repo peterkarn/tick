@@ -16,6 +16,7 @@ body {
   right: 0;
   top: 0;
   bottom: 0;
+  pointer-events: none;
 }
 
 .all > div {
@@ -78,7 +79,7 @@ body {
   left: 492px;
   text-transform: uppercase;
   min-width: 300px;
-  font-size: 25px !important;
+  font-size: 28px !important;
 }
 
 .to {
@@ -86,7 +87,7 @@ body {
   left: 492px;
   text-transform: uppercase;
   min-width: 300px;
-  font-size: 25px !important;
+  font-size: 28px !important;
 }
 
 input {

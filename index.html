@@ -28,12 +28,14 @@ function setTicket() {
       const date = new Date();
       const now = date.getTime();
       const todayDate = now.toLocaleString();
-      const ticketBought = new Date(now - (hour * 17));
+      const ticketBought = new Date(now - (hour * 27));
       const departure = date.setHours(22, 45);
       const arrival = departure + (hour * 17.1);
 
       const getDateAndTime = (ts) => {
-          return `${new Date(ts).toLocaleDateString().replaceAll('/', '.')} ${new Date(ts).toLocaleTimeString().replaceAll(':', '.').slice(0, 5)} `
+        const date = `${new Date(ts).toLocaleDateString().replaceAll('/', '.')}`;
+        const time = `${new Date(ts).toLocaleTimeString([], { hour12: false }).replaceAll(':', '.').slice(0, 5)}`;
+        return date + ' ' + time
       }
   
       data = {
@@ -52,27 +54,26 @@ function setTicket() {
   }
 
   if (localStorage.getItem('ticket')) { 
-
     data = JSON.parse(localStorage.getItem('ticket')); 
   }
 
   if(!alarm && !localStorage.getItem('ticket')) {
-
     data = {
       passenger: prompt('Пасажир') ?? 'Карнаух Петро',
       bought: prompt('Дата купівлі / 06.10.2023 09.48') ?? '06.10.2023 09.48',
       train: prompt('Номер поїзда / 060') ?? '060',
       from: prompt('Звідки') ?? 'Львів',
       to: prompt('Куди') ?? '',
-      departure: prompt('Відправлення / 06.10.2023 09.48') ?? '06.10.2023 09.48',
+      // departure: prompt('Відправлення / 06.10.2023 09.48') ?? '06.10.2023 09.48',
+      departure: getDateAndTime(ticketBought),
       arrival: prompt('Прибуття / 06.10.2023 09.48') ?? '06.10.2023 09.48',
       price:  prompt('Ціна') ?? '645.10',
     }
+
     localStorage.setItem('ticket', JSON.stringify(data));
   }
 
   renderData();
-
 }
 
 function renderData() {
