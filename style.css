@@ -21,11 +21,10 @@ body {
 
 .all > div {
   position: absolute;
-  background: white;
   filter: blur(0.5px);
   font-size: 24px;
   font-weight: bold;
-  background: white;
+  /* background: white; */
   letter-spacing: 0.03em;
 }
 
