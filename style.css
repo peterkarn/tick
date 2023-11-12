@@ -24,7 +24,7 @@ body {
   filter: blur(0.5px);
   font-size: 24px;
   font-weight: bold;
-  /* background: white; */
+  background: white;
   letter-spacing: 0.03em;
 }
 
@@ -89,7 +89,6 @@ body {
   min-width: 300px;
   font-size: 28px !important;
   line-height: 1.1;
-  background-color: red;
 }
 
 input {
