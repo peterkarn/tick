@@ -64,8 +64,7 @@ function setTicket() {
       train: prompt('Номер поїзда / 060') ?? '060',
       from: prompt('Звідки') ?? 'Львів',
       to: prompt('Куди') ?? '',
-      // departure: prompt('Відправлення / 06.10.2023 09.48') ?? '06.10.2023 09.48',
-      departure: getDateAndTime(ticketBought),
+      departure: prompt('Відправлення / 06.10.2023 09.48') ?? '06.10.2023 09.48',
       arrival: prompt('Прибуття / 06.10.2023 09.48') ?? '06.10.2023 09.48',
       price:  prompt('Ціна') ?? '645.10',
     }
