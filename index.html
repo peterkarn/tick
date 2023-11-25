@@ -29,8 +29,8 @@ function setTicket() {
       const now = date.getTime();
       const todayDate = now.toLocaleString('uk-UA');
       const ticketBought = new Date(now - (hour * 27));
-      const departure = date.setHours(22, 45);
-      const arrival = departure + (hour * 17.1);
+      const departure = date.setHours(22, 34);
+      const arrival = departure + (hour * 17);
 
       const getDateAndTime = (ts) => {
         const date = `${new Date(ts).toLocaleDateString('uk-UA').replaceAll('/', '.')}`;
@@ -40,7 +40,7 @@ function setTicket() {
   
       data = {
         bought: getDateAndTime(ticketBought),
-        train: '060',
+        train: '032',
         from: 'Львів',
         to: 'Запоріжжя',
         departure: getDateAndTime(departure),
@@ -61,7 +61,7 @@ function setTicket() {
     data = {
       passenger: prompt('Пасажир') ?? 'Карнаух Петро',
       bought: prompt('Дата купівлі / 06.10.2023 09.48') ?? '06.10.2023 09.48',
-      train: prompt('Номер поїзда / 060') ?? '060',
+      train: prompt('Номер поїзда / 032') ?? '032',
       from: prompt('Звідки') ?? 'Львів',
       to: prompt('Куди') ?? '',
       departure: prompt('Відправлення / 06.10.2023 09.48') ?? '06.10.2023 09.48',
