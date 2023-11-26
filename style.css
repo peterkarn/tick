@@ -8,6 +8,7 @@ body {
   position: relative;
   font-family: VeranaSans, sans-serif;
   width: fit-content;
+  scroll-behavior: smooth;
 }
 
 .all {
@@ -93,4 +94,39 @@ body {
 
 input {
   position: relative;
+}
+
+form {
+  display: grid;
+  gap: 8px;
+  max-width: 200px;
+  border-radius: 8px;
+  border: 2px dashed #444;
+  background-color: #ccc;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+label {
+  display: grid;
+  gap: 4px
+}
+
+button {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: green;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input {
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #444;
 }
