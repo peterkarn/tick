@@ -18,29 +18,29 @@
     <input autocomplete="name" type="text" name="passenger" required placeholder="Ілля Кива">
   </label>
 
-  <button type="submit"> Save Passenger </button>
+  <button type="submit"> Зберегти пасажира </button>
   </form>
 
   <form id="direction">
   <label>
     Номер поїзда
-    <input type="number" name="train" pattern="\b\d{3}\b" required placeholder="3 цифри - 032">
+    <input type="number" name="train" pattern="\b\d{3}\b" required placeholder="3 цифри - 032" value="032">
   </label>
   <label>
     Ст відправлення
-    <input type="text" name="from" required placeholder="Запоріжжя">
+    <input type="text" name="from" required placeholder="Запоріжжя" value="Запоріжжя">
   </label>
   <label>
     Ст прибуття
-    <input type="text" name="to" required placeholder="Львів">
+    <input type="text" name="to" required placeholder="Львів" value="Львів">
   </label>
   
   <label>
     Ціна 
-    <input type="number" name="price" required placeholder="123.00">
+    <input type="number" name="price" required placeholder="645.00" value="645.00">
   </label>
 
-  <button type="submit"> Save Direction </button>
+  <button type="submit"> Зберегти інформацію </button>
   </form>
 
   <form id="dates">
@@ -53,7 +53,7 @@
     <input type="datetime-local" name="arrival" required>
   </label>
 
-  <button type="submit"> Save Dates </button>
+  <button type="submit"> Зберегти дати </button>
   </form>
 </body>
 
@@ -71,13 +71,13 @@ const HOUR = 1000 * 60 * 60;
 function setPassenger(passenger) {
   localStorage.setItem('passenger', passenger)
 
-  alert('Passenger saved')
+  alert('Пасажира збережено')
 }
 
 function setTicketData(ticketData) {
   localStorage.setItem('ticketData', JSON.stringify(ticketData))
 
-  alert('Data saved')
+  alert('Дані збережено')
 }
 
 function setDates(dates) {
@@ -89,7 +89,7 @@ function setDates(dates) {
 
   localStorage.setItem('dates', JSON.stringify(processedData))
 
-  alert('Dates saved')
+  alert('Дати збережено')
 }
 
 function renderData() {
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if(PASSENGER && TICKET_DATA && DATES) renderData()
   
   else {
-    alert('Please fill the form')
+    alert('Заповніть форму внизу сторінки')
     passenger[0].focus()
   }
 });
