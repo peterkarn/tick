@@ -134,3 +134,12 @@ input {
   border-radius: 8px;
   border: 1px solid #444;
 }
+
+.forms {
+  opacity: 0.05;
+  transition: opacity: .4s;
+}
+
+.forms:has(:focus) {
+  opacity: 1;
+}
