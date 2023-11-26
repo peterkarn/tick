@@ -24,7 +24,7 @@
   <form id="direction">
   <label>
     Номер поїзда
-    <input type="number" name="train" pattern="\b\d{3}\b" required placeholder="3 цифри - 032" value="032">
+    <input type="number" name="train" pattern="\b\d{3}\b" required placeholder="032" value="32">
   </label>
   <label>
     Ст відправлення
@@ -101,7 +101,7 @@ function renderData() {
 
   const renderingData = {
     passenger: storageData.passenger,
-    train: storageData.ticket?.train,
+    train: storageData.ticket?.train.padStart('3', '0'),
     from: storageData.ticket?.from,
     to: storageData.ticket?.to,
     price:  Number(storageData.ticket?.price).toFixed(2),
