@@ -137,7 +137,7 @@ input {
 
 .forms {
   opacity: 0.05;
-  transition: opacity: .4s;
+  transition: opacity .4s;
 }
 
 .forms:has(:focus) {
