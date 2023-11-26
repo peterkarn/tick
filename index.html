@@ -104,7 +104,7 @@ function renderData() {
     train: storageData.ticket.train,
     from: storageData.ticket.from,
     to: storageData.ticket.to,
-    price:  storageData.ticket.price,
+    price:  Number(storageData.ticket.price).toFixed(2),
     departure: storageData.dates.departure,
     arrival: storageData.dates.arrival,
     bought: storageData.dates.bought,
@@ -113,8 +113,10 @@ function renderData() {
   for(item in renderingData) {
     const el = document.createElement('div');
     const container = document.querySelector('.all');
+
     el.classList.add(item)
     el.innerText = renderingData[item]
+
     container.append(el);
   }
 }
