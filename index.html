@@ -100,14 +100,18 @@ function renderData() {
   }
 
   const renderingData = {
-    passenger: storageData.passenger,
-    train: storageData.ticket?.train.padStart('3', '0'),
-    from: storageData.ticket?.from,
-    to: storageData.ticket?.to,
-    price:  Number(storageData.ticket?.price).toFixed(2),
-    departure: storageData.dates?.departure,
-    arrival: storageData.dates?.arrival,
-    bought: storageData.dates?.bought,
+    passenger: storageData.passenger ?? 'storageData.passenger',
+    train: storageData.ticket?.train 
+      ? storageData.ticket?.train.padStart('3', '0')
+      : '',
+    from: storageData.ticket?.from ?? '',
+    to: storageData.ticket?.to ?? '',
+    price:  storageData.ticket?.price 
+      ? Number(storageData.ticket?.price).toFixed(2)
+      : '',
+    departure: storageData.dates?.departure ?? '',
+    arrival: storageData.dates?.arrival ?? '',
+    bought: storageData.dates?.bought ?? '',
   }
 
   for(item in renderingData) {
